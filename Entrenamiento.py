@@ -1,22 +1,28 @@
-# Solicitar una calificacion
-# ingresar una lista de calificaciones y otro valor para comparar
-# mostrar si aprueba if elif else mostrar mensajes aprueba etc
-# un ciclo para recorrer las calificaciones y calcular promedio
-# un ciclo para contar calificaciones mayores al valor solicitado
-# evalua si una calificacion esta presente en la lista y cuenta cuantas veces aparece
+while True:
+    try:
+        califs= input("Ingresa tus calificaciones separadas por ','") #Pedir una lista de calificaciones
+        valores= califs.split(",")         #Separar la cadena en elementos individuales
+        numeros=[]    #Lista vacia para todas las calificaciones
+        
+        #Convertir cada valor en un float
+        for valor in valores:
+            numeros.append(float(valor))
+        for calificacion in numeros:
+            if 60 <= calificacion <= 69:
+                print(f"Aprobaste con {calificacion}, sacaste una C, ¡sigue mejorando!")
+            elif 70 <= calificacion <= 89:
+                print(f"Aprobaste con {calificacion}, sacaste una B, ¡Muy bien!")
+            elif 90 <= calificacion <= 100:
+                print(f"Aprobaste con {calificacion}, sacaste una A, ¡Excelente!")
+            else:
+                print(f"Reprobaste con {calificacion}, ¡sigue mejorando!")
+    except ValueError:
+        print("Ingresa un valor numerico")
+    if len(numeros)>0:
+        promedio= sum(numeros)/len (numeros)
+        print (f"Tu promedio es : {promedio:.2f}")
 
-
-calificacion_soli=int(input("Ingresa tu calificacion entre 0 y 100: ")) #Solicitar una calificacion numerica
-if calificacion_soli >= 60:  #Evaluar si esta aprobada o reprobada
-    print("Aprobaste")
-else: print ("Reprobaste")
-
-califs= input("Ingresa tus calificaciones separadas por ','") #Pedir una lista de calificaciones
-valores= califs.split(",")         #Separar la cadena en elementos individuales
-numeros=[int(valor) for valor in valores]    #Convertimos cada valor a numeros int
-print("Lista de numeros: ", numeros)
-
-# 1. hacer un ciclo para recorrer la lista (iterador y range (creo))
-# 2. Un ciclo for o while para contar cuantas calificaciones fueron mas altas que el numero
-# 3. Evalúa si una calificación específica está presente en la lista cuenta cuántas veces aparece, utilizando break y otras estructuras para controlar el flujo.
-# 
+        if promedio >= 60:
+            print(f"Aprobaste con un {promedio:.2f} Felicidades!")
+        else:
+            print(f"Reprobaste con un {promedio:.2f}. Sigue esforzandote!")
