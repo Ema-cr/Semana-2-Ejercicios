@@ -16,12 +16,7 @@ valores= califs.split(",")         #Separar la cadena en elementos individuales
 numeros=[int(valor) for valor in valores]    #Convertimos cada valor a numeros int
 print("Lista de numeros: ", numeros)
 
-
-
-
-
-
-
-
-
-
+# 1. hacer un ciclo para recorrer la lista (iterador y range (creo))
+# 2. Un ciclo for o while para contar cuantas calificaciones fueron mas altas que el numero
+# 3. Evalúa si una calificación específica está presente en la lista cuenta cuántas veces aparece, utilizando break y otras estructuras para controlar el flujo.
+# 
